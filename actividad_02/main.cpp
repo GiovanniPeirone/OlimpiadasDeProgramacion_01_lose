@@ -3,38 +3,10 @@
 #include<windows.h>
 
 
-class ConvertorPalabra
-{
-    std::vector<int> ListaPasos;
-    std::string Palabra;
-
-public:
-
-    ConvertorPalabra(std::string _palabra)
-    {
-        Palabra = _palabra;
-    }
-
-    void ImprimirVector()
-    {
-        for (int i = 0; ListaPasos.size() > i; i++)
-        {
-            std::cout << ListaPasos[i];
-        }
-
-    }
-
-
-
-
-
-
-};
-
-int Pasos()
+int Menu()
 {
     int paso;
-
+    std::cout << "-------------------------" << std::endl;
     std::cout << "1 - INVERTIR" << std::endl;
     std::cout << "2 - CHAUAGUS" << std::endl;
     std::cout << "3 - BORRA - n" << std::endl;
@@ -51,6 +23,117 @@ int Pasos()
     return paso;
 }
 
+int main()
+{
+    std::vector<int> ListaPasos;
+    std::string Palabra;
+
+    std::cout << "Palabra: ";
+    std::cin >> Palabra;
+
+    while (true)
+    {
+        std::cout << Palabra;
+        for (int i = 0 ; ListaPasos.size() > i ; i++)
+        {
+            std::cout << ListaPasos[i] << std::endl;
+
+        }
+        try
+        {
+            int paso = Menu();
+
+            if (paso == 7)
+            {
+                break;
+            }
+            if (paso == 6)
+            {
+                for (int i = 0 ; ListaPasos.size() > i ; i++)
+                {
+                    if (ListaPasos[i] == 1)
+                    {
+
+                    }
+                    if (ListaPasos[i] == 2)
+                    {
+
+                    }
+                    if (ListaPasos[i] == 3)
+                    {
+
+                    }
+                    if (ListaPasos[i] == 4)
+                    {
+
+                    }
+                    if (ListaPasos[i] == 5)
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+                ListaPasos.push_back(paso);
+            }
+
+        }
+        catch (int paso)
+        {
+            std::cout << "Valor Invalido";
+        }
+
+        system("cls");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+class ConvertorPalabra
+{
+
+
+
+public:
+
+    ConvertorPalabra(std::string _palabra)
+    {
+        Palabra = _palabra;
+    }
+
+    void ImprimirVector()
+    {
+        std::cout << "---------Pasos Seleccionados----------";
+        for (int i = 0; ListaPasos.size() > i; i++)
+        {
+            std::cout << ListaPasos[i];
+        }
+        std::cout << "--------------------------------------";
+
+    }
+
+    int agregarPaso(int Paso)
+    {
+        std::ListaPasos.assign(Paso) ;
+    }
+
+
+
+
+};
+
+
+
 
 int main()
 {
@@ -64,20 +147,23 @@ int main()
 
     while (true)
     {
-        try{
-
+        palabraConvertida.ImprimirVector();
+        try
+        {
             int paso = Pasos();
-
+            palabraConvertida.agregarPaso(Pasos);
         }
-        catch(int paso){
-
+        catch(int paso)
+        {
             std::cout << paso << " no es un valor valido";
         }
 
-        system("cls");
 
+
+        system("cls");
     }
 
 
     return 0;
 }
+*/
