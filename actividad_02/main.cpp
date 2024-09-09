@@ -1,169 +1,43 @@
 #include <iostream>
-#include <vector>
-#include<windows.h>
 
-
-int Menu()
-{
-    int paso;
-    std::cout << "-------------------------" << std::endl;
-    std::cout << "1 - INVERTIR" << std::endl;
-    std::cout << "2 - CHAUAGUS" << std::endl;
-    std::cout << "3 - BORRA - n" << std::endl;
-    std::cout << "4 - BORRAULTI" << std::endl;
-    std::cout << "5 - INTERCAMBIA" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "6 - Calcular" << std::endl;
-    std::cout << "7 - Salir" << std::endl;
-
-    std::cout << "Paso:" ;
-    std::cin >> paso;
-    std::cout << std::endl;
-
-    return paso;
-}
+using namespace std;
 
 int main()
 {
-    std::vector<int> ListaPasos;
-    std::string Palabra;
+    char Letra = 65;
+    char Letras[26][2];
 
-    std::cout << "Palabra: ";
-    std::cin >> Palabra;
 
-    while (true)
+    //mapear letras en el array
+    int x = 0;
+    for (int i = 0; 26 > i; i++)
     {
-        std::cout << Palabra;
-        for (int i = 0 ; ListaPasos.size() > i ; i++)
-        {
-            std::cout << ListaPasos[i] << std::endl;
-
-        }
-        try
-        {
-            int paso = Menu();
-
-            if (paso == 7)
-            {
-                break;
-            }
-            if (paso == 6)
-            {
-                for (int i = 0 ; ListaPasos.size() > i ; i++)
-                {
-                    if (ListaPasos[i] == 1)
-                    {
-
-                    }
-                    if (ListaPasos[i] == 2)
-                    {
-
-                    }
-                    if (ListaPasos[i] == 3)
-                    {
-
-                    }
-                    if (ListaPasos[i] == 4)
-                    {
-
-                    }
-                    if (ListaPasos[i] == 5)
-                    {
-
-                    }
-                }
-            }
-            else
-            {
-                ListaPasos.push_back(paso);
-            }
-
-        }
-        catch (int paso)
-        {
-            std::cout << "Valor Invalido";
-        }
-
-        system("cls");
-    }
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
-/*
-class ConvertorPalabra
-{
-
-
-
-public:
-
-    ConvertorPalabra(std::string _palabra)
-    {
-        Palabra = _palabra;
-    }
-
-    void ImprimirVector()
-    {
-        std::cout << "---------Pasos Seleccionados----------";
-        for (int i = 0; ListaPasos.size() > i; i++)
-        {
-            std::cout << ListaPasos[i];
-        }
-        std::cout << "--------------------------------------";
-
-    }
-
-    int agregarPaso(int Paso)
-    {
-        std::ListaPasos.assign(Paso) ;
+        Letras[i][x] = Letra;
+        Letra += 32;
+        Letras[i][x+1] = Letra;
+        Letra -= 31;
+        cout << Letras[i][x];
+        cout << Letras[i][x+1];
     }
 
 
 
 
-};
+    string texto = "ashdgaKASDJGHAKSJ_333sdjkhasSDALKJH";
 
 
-
-
-int main()
-{
-    std::string Palabra;
-
-    std::cout << "Palabra:" ;
-    std::cin >> Palabra;
-    std::cout << std::endl;
-
-    ConvertorPalabra palabraConvertida(Palabra);
-
-    while (true)
+    /*
+    for (int i = 0 ; text.length() > i ; i++)
     {
-        palabraConvertida.ImprimirVector();
-        try
+        if (text.length(i) =< 90)
         {
-            int paso = Pasos();
-            palabraConvertida.agregarPaso(Pasos);
+
         }
-        catch(int paso)
-        {
-            std::cout << paso << " no es un valor valido";
-        }
-
-
-
-        system("cls");
     }
+
+    */
 
 
     return 0;
 }
-*/
+
