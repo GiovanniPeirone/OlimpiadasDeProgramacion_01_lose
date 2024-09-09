@@ -10,7 +10,7 @@ int main()
 
     //mapear letras en el array
     int x = 0;
-    cout << "--Lentras--";
+    cout << "--Lentras--" << endl;
     for (int i = 0; 26 > i; i++)
     {
         Letras[i][x] = Letra;
@@ -19,27 +19,39 @@ int main()
         Letra -= 31;
         cout << Letras[i][x];
         cout << Letras[i][x+1];
+        cout << endl;
     }
+    cout << endl;
+    cout << "--------------" <<endl;
+    string texto = "ashdgaKASDJGHAKSJsdjkhasSDALKJH";
 
-    string texto = "ashdgaKASDJGHAKSJ_333sdjkhasSDALKJH";
-    string NewTexto;
-
-    cout << texto;
-    for (int i = 0 ; texto.length() > i ; i++)
+    cout << texto << endl;
+    for (int i = 0 ; texto.size() > i ; i++)
     {
-        if (texto.lenght(i) < 91)
+        if (texto.at(i) >= 97)
         {
-            for (int a = 0 ; Letras.zize() > a; a++)
+            for(int a = 0 ; Letra > a ; a++)
             {
-                if (texto.lenght(i) == Letras[a][0])
+                if ( Letras[a][1] == texto.at(i))
                 {
-                    NewTexto += Letras[a][1]
+                    texto.at(i) = Letras[a][0];
+                }
+            }
+        }
+
+        if (texto.at(i) <= 90)
+        {
+            for(int a = 0; Letra > a; a++)
+            {
+                if ( Letras[a][0] == texto.at(i))
+                {
+                    texto.at(i) = Letras[a][1];
                 }
             }
         }
     }
 
-
+    cout << texto  << endl;
 
 
     return 0;

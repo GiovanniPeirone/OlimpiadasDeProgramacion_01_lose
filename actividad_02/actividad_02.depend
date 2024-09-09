@@ -1,8 +1,6 @@
 # depslib dependency file v1.0
-1725219354 source:d:\github\olimiadasdeprogramacion\actividad_02\main.cpp
+1725921973 source:d:\github\olimiadasdeprogramacion\actividad_02\main.cpp
 	<iostream>
-	<vector>
-	<windows.h>
 
 1725895858 source:c:\users\giovanni peirone\documents\github\olimiadasdeprogramacion\actividad_02\main.cpp
 	<iostream>
