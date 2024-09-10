@@ -2,6 +2,9 @@
 1725921973 source:d:\github\olimiadasdeprogramacion\actividad_02\main.cpp
 	<iostream>
 
-1725975846 source:c:\users\giovanni peirone\documents\github\olimiadasdeprogramacion\actividad_02\main.cpp
+1725984997 source:c:\users\giovanni peirone\documents\github\olimiadasdeprogramacion\actividad_02\main.cpp
 	<iostream>
+	<cctype>
+	<algorithm>
+	<string>
 
