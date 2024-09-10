@@ -1,58 +1,80 @@
 #include <iostream>
+#include <cctype>
+#include <algorithm>
+#include <string>
 
 using namespace std;
 
+string INTERCAMBIA(string texto, int letras)
+{
+    char letrasAray[letras];
+
+    for (int i = 0 ; letras > i ; i++)
+    {
+        letrasAray[i] = texto.at(i);
+    }
+
+    for (int i = 0; texto.size() > i; i++)
+    {
+
+        if (letrasAray[i] > 96)
+        {
+            texto[i] = toupper(texto[i]);
+
+        }
+        if (letrasAray[i] < 91)
+        {
+            texto[i] = tolower(texto[i]);
+
+        }
+    }
+    return texto;
+}
+
+string ROTA(string texto)
+{
+    reverse(texto.begin() , texto.end());
+    return texto;
+}
+
+string BORRAULTI(string texto)
+{
+     texto.erase(0, 2);
+
+     return texto;
+}
+
 int main()
 {
-    char Letra = 65;
-    char Letras[26][2];
+    string texto = "hola";
+    const int letras = texto.size();
 
 
-    //mapear letras en el array
-    int x = 0;
-    cout << "--Lentras--" << endl;
-    for (int i = 0; 26 > i; i++)
-    {
-        Letras[i][x] = Letra;
-        Letra += 32;
-        Letras[i][x+1] = Letra;
-        Letra -= 31;
-        cout << Letras[i][x];
-        cout << Letras[i][x+1];
-        cout << endl;
-    }
-    cout << endl;
-    cout << "--------------" <<endl;
-    string texto = "ashdgaKASDJGHAKSJsdjkhasSDALKJH";
+    int instrucciones[3] = {1,2,3};
 
     cout << texto << endl;
-    for (int i = 0 ; texto.size() > i ; i++)
+    cout << "---------------------------------------------" << endl;
+    for (int i = 0 ; 3 > i ; i++)
     {
-        if (texto.at(i) >= 97)
+        if (instrucciones[i] == 1) //Camviar Mayusculas y Minusculas
         {
-            for(int a = 0 ; Letra > a ; a++)
-            {
-                if ( Letras[a][1] == texto.at(i))
-                {
-                    texto.at(i) = Letras[a][0];
-                }
-            }
+            texto = INTERCAMBIA(texto, letras);
+        }
+        if (instrucciones[i] == 2)
+        {
+            texto = ROTA(texto);
         }
 
-        if (texto.at(i) <= 90)
+        if (instrucciones[i] == 3)
         {
-            for(int a = 0; Letra > a; a++)
-            {
-                if ( Letras[a][0] == texto.at(i))
-                {
-                    texto.at(i) = Letras[a][1];
-                }
-            }
+            texto = BORRAULTI(texto);
         }
+
+
+
     }
 
-    cout << texto  << endl;
-
+    cout << texto << endl;
 
     return 0;
 }
