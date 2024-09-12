@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 string INTERCAMBIA(string texto, int letras)
 {
 
@@ -34,75 +32,127 @@ string INTERCAMBIA(string texto, int letras)
     return texto;
 }
 
+string BORRAULTI(string texto)
+{
+    if (!texto.empty())
+    {  // Verifica si la cadena no est√° vac√≠a
+        texto.erase(texto.size() - 1);
+        return texto;
+    } else {
+        return texto;
+    }
+}
+
+string BORRAPRI(string texto)
+{
+    if (!texto.empty()) {
+        texto.erase(0, 1);  // Elimina el primer car√°cter
+        return texto;
+    } else {
+        cout << "La cadena est√° vac√≠a, no se puede eliminar el √∫ltimo car√°cter." << std::endl;
+        return texto;
+    }
+}
+
+string DUP(string texto)
+{
+    texto += texto;
+    return texto;
+}
+
 string ROTA(string texto)
+{
+    char priLetra = texto[0];
+
+    texto = texto + priLetra;
+
+    texto.erase(0 , 1);
+
+    return texto;
+}
+
+string INVERTIR(string texto)
 {
     reverse(texto.begin() , texto.end());
     return texto;
 }
 
-string BORRAULTI(string texto)
+string AGREGA(string texto, string agrega)
 {
-     texto.erase(0, 1);
+    texto = texto + agrega;
 
-     return texto;
+    return texto;
 }
-/*
-string BORRAPRI(string texto)
+
+string BORRA(string texto, size_t borra)
 {
-    if (!texto.empty()) {
-        // Eliminar el ˙ltimo car·cter solo si la cadena no est· vacÌa
-        texto.pop_back();
-    } else {
-        cout << "La cadena est· vacÌa, no se puede eliminar el ˙ltimo car·cter." << std::endl;
+    if (borra < texto.size()) {
+
+        texto.erase(borra, 1);  // Elimina el car√°cter en la posici√≥n i
+
     }
-
     return texto;
 }
+
+/*
+Falta:
+CHAU-Œ±:
+INVERTIR-i-j:
+CHAUAGUS:
 */
-string DUP(string texto)
-{
-    texto = texto + texto;
-    return texto;
-}
-
 
 int  main()
 {
-    string texto = "hola";
+    string texto = "holapepe";
 
     const int letras = texto.size();
 
 
-    int instrucciones[5] = {1,2,3,4,5};
+    int instrucciones[1] = {9};
 
     cout << texto << endl;
     cout << "---------------------------------------------" << endl;
-    for (int i = 0 ; 5 > i ; i++)
+    for (int i = 0 ; 1 > i ; i++)
     {
         if (instrucciones[i] == 1) //Camviar Mayusculas y Minusculas
         {
             texto = INTERCAMBIA(texto, letras);
         }
-        if (instrucciones[i] == 2)
-        {
-            texto = ROTA(texto);
-        }
 
-        if (instrucciones[i] == 3)
+        if (instrucciones[i] == 2)
         {
             texto = BORRAULTI(texto);
         }
 
-        if (instrucciones[i] = 4)
+        if (instrucciones[i] == 3)
         {
             texto = BORRAPRI(texto);
         }
 
-        if (instrucciones[i] == 5)
+        if (instrucciones[i] == 4)
         {
             texto = DUP(texto);
         }
 
+        if (instrucciones[i] == 5)
+        {
+            texto = ROTA(texto);
+        }
+
+        if (instrucciones[i] == 6)
+        {
+            texto = INVERTIR(texto);
+        }
+
+        if (instrucciones[i] == 7)
+        {
+            texto = AGREGA(texto, "pepepipo");
+        }
+
+        if (instrucciones[i] == 8)
+        {
+            texto = BORRA(texto, 5);
+        }
 
     }
 
