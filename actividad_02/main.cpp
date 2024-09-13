@@ -94,21 +94,31 @@ string BORRA(string texto, size_t borra)
     return texto;
 }
 
-/*
-Falta:
-CHAU-α:
-INVERTIR-i-j:
-CHAUAGUS:
-*/
-
 int  main()
 {
-    string texto = "holapepe";
-
+    string texto = "CACEROLAcasaLimonXYZagusiagus";
     const int letras = texto.size();
+    const int CantidadDePasos = 8;
+    int instrucciones[CantidadDePasos] = {6,6,8,2,6,2,1,6};
+    //Dentro van los Pasos en el orden deseado
+    /*
+    1 - INTERCAMBIA
+    2 - BORRAULTI
+    3 - BORRAPRI
+    4 - DUP
+    5 - ROTA
+    6 - INVERTIR
+    7 - AGREGA (Linea 166 se elije la palabra)
+    8 - BORRA (Linea 164 se elije el numero)
+    */
 
+    /*
+    Falta:
+        CHAU-α:
+        INVERTIR-i-j:
+        CHAUAGUS:
+    */
 
-    int instrucciones[1] = {9};
 
     cout << texto << endl;
     cout << "---------------------------------------------" << endl;
