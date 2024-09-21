@@ -2,11 +2,8 @@
 
 using namespace std;
 
-int panes(int ciudades,int peajes)
+int panes(const int ciudades,const int peajes)
 {
-    int pames = 15;
-
-
 
     return 0;
 }
