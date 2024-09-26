@@ -7,9 +7,9 @@ int main()
     div_t resultado;
 
 
-    const int NumeroDeResiduos = 50; //NumeroDeResiduos
-    int base = 2; //BASE
-    int numero = 1000000000; //NUMERO
+    const int NumeroDeResiduos = 4; //NumeroDeResiduos
+    int base = 10; //BASE
+    int numero = 6; //NUMERO
 
     int Residuos[NumeroDeResiduos] = {};
 
